@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.Arrays;
 
 
-public class Heapsort 
+public class HeapSort 
 {
     private  int[] array;
     private  int n;
@@ -67,6 +67,12 @@ public class Heapsort
     	buildheap(array);
 
     	
+    	for(int i=n;i>0;i--){
+    		exchange(0, i);
+    		n=n-1;
+    		maxheap(array, 0);
+		}
+
     	
     	//Schrijf hier je sorteer implementatie
     	
@@ -75,11 +81,11 @@ public class Heapsort
     }
     
     public static void main(String[] args) {
-		Heapsort hs = new Heapsort();
-    	int []a1={3,5,8,1,2,4};
-    	hs.sort(a1);
+		HeapSort heapSort = new HeapSort();
+    	int [] arrayToSort = {3,5,8,1,2,4};
+    	heapSort.sort(arrayToSort);
 
-    	System.out.print(Arrays.toString(a1));
+    	System.out.print(Arrays.toString(arrayToSort));
     	
 	}
 } 
